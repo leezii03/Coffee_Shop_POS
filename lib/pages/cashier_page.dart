@@ -117,7 +117,7 @@ class _CashierPageState extends State<CashierPage> {
                         children: [
                           Row(
                             children: [
-                              Icon(Icons.card_travel_outlined),
+                              Icon(Icons.shopping_cart_outlined),
                               SizedBox(width: 10),
                               Text(
                                 "Cart (9)",
@@ -128,11 +128,101 @@ class _CashierPageState extends State<CashierPage> {
                               ),
                             ],
                           ),
-                          Icon(Icons.delete_outline),
+                          IconButton(onPressed: () {}, icon: Icon(Icons.delete_outline, color: Colors.red,))
                         ],
                       ),
                       SizedBox(height: 5),
                       Divider(),
+
+                      Container(
+                        padding: EdgeInsets.all(12),
+                        margin: EdgeInsets.symmetric(vertical: 6),
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Product Info
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Espresso",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                SizedBox(height: 4),
+                                Text(
+                                  "\$3.00",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.grey[700],
+                                  ),
+                                ),
+                              ],
+                            ),
+
+                            // Quantity + Trash aligned right
+                            Row(
+                              children: [
+                                // Minus Button
+                                Container(
+                                  width: 36,
+                                  height: 36,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Text(
+                                    "-",
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+
+                                // Quantity Number
+                                Text(
+                                  "3",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                SizedBox(width: 8),
+
+                                // Plus Button
+                                Container(
+                                  width: 36,
+                                  height: 36,
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: Text(
+                                    "+",
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                SizedBox(width: 5),
+
+                                // Delete Button
+                                IconButton(
+                                  icon: Icon(Icons.delete_outlined, color: Colors.red),
+                                  onPressed: () {
+                                    // delete action
+                                  },
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
